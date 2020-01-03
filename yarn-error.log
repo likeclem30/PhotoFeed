@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/Williams/.nvm/versions/node/v8.15.1/bin/node /Users/Williams/.nvm/versions/node/v8.15.1/bin/yarnpkg add 2.0.0-alpha.12
+  /Users/Williams/.nvm/versions/node/v8.15.1/bin/node /Users/Williams/.nvm/versions/node/v8.15.1/bin/yarn add firebase
 
 PATH: 
   /usr/local/opt/libpq/bin:/Users/Williams/anaconda3/bin:/Users/Williams/anaconda3/condabin:/Users/Williams/.nvm/versions/node/v8.15.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/Williams/.node/bin:/Users/Williams/Library/Android/sdk/emulator:/Users/Williams/Library/Android/sdk/tools:/Users/Williams/Library/Android/sdk/tools/bin:/Users/Williams/Library/Android/sdk/platform-tools
@@ -14,17 +14,11 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/2.0.0-alpha.12: Not found
-      at Request.params.callback [as _callback] (/Users/Williams/.nvm/versions/node/v8.15.1/lib/node_modules/yarn/lib/cli.js:66947:18)
-      at Request.self.callback (/Users/Williams/.nvm/versions/node/v8.15.1/lib/node_modules/yarn/lib/cli.js:140665:22)
-      at emitTwo (events.js:126:13)
-      at Request.emit (events.js:214:7)
-      at Request.<anonymous> (/Users/Williams/.nvm/versions/node/v8.15.1/lib/node_modules/yarn/lib/cli.js:141637:10)
-      at emitOne (events.js:116:13)
-      at Request.emit (events.js:211:7)
-      at IncomingMessage.<anonymous> (/Users/Williams/.nvm/versions/node/v8.15.1/lib/node_modules/yarn/lib/cli.js:141559:12)
-      at Object.onceWrapper (events.js:313:30)
-      at emitNone (events.js:111:20)
+  Error: https://registry.yarnpkg.com/firebase: ETIMEDOUT
+      at Timeout._onTimeout (/Users/Williams/.nvm/versions/node/v8.15.1/lib/node_modules/yarn/lib/cli.js:141325:19)
+      at ontimeout (timers.js:498:11)
+      at tryOnTimeout (timers.js:323:5)
+      at Timer.listOnTimeout (timers.js:290:5)
 
 npm manifest: 
   {
@@ -43,7 +37,7 @@ npm manifest:
       "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
       "react-native-gesture-handler": "~1.5.0",
       "react-native-reanimated": "~1.4.0",
-      "react-native-screens": "^2.0.0-alpha.22",
+      "react-native-screens": "2.0.0-alpha.12",
       "react-native-web": "~0.11.7",
       "react-navigation": "^4.0.10",
       "react-navigation-stack": "^1.10.3",
@@ -4206,17 +4200,17 @@ Lockfile:
     dependencies:
       hoist-non-react-statics "^2.3.1"
   
+  react-native-screens@2.0.0-alpha.12:
+    version "2.0.0-alpha.12"
+    resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.0.0-alpha.12.tgz#35a6ef3b472958e9d35f0ca9e582d0d158f8e379"
+    integrity sha512-x9M7FEdcm97bVDp3pi//nhduJHLFMrmDQs0fq299yx3kHdgHbrmhsa8jgW4HvDQhjyPE0FWADY/GrXFuPRj80w==
+    dependencies:
+      debounce "^1.2.0"
+  
   "react-native-screens@^1.0.0 || ^1.0.0-alpha":
     version "1.0.0-alpha.23"
     resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.23.tgz#25d7ea4d11bda4fcde2d1da7ae50271c6aa636e0"
     integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
-    dependencies:
-      debounce "^1.2.0"
-  
-  react-native-screens@^2.0.0-alpha.22:
-    version "2.0.0-alpha.22"
-    resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.0.0-alpha.22.tgz#67cde460153985e400e0280ed3a0e5be07b0dc5a"
-    integrity sha512-2U++QrTf8H989ekHbgFuia8LLd8/+SbXra+rqDAOihCNRLFi91+y5QGgc7DP4Ic9MtHTaYRtWopyfyUo4ybD0A==
     dependencies:
       debounce "^1.2.0"
   
