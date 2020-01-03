@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import {f, auth, database, storage } from './config/config.js'
 
 import feed from './app/screens/feed.js'
 import upload from './app/screens/upload.js'
@@ -14,5 +15,39 @@ const TabNavigator = createBottomTabNavigator({
   Upload: upload,
   Profile: profile
 });
-export default createAppContainer(TabNavigator);
+
+const MainStack = createAppContainer(TabNavigator)
+export default class App extends React.Component{
+  
+  login = async() => {
+    //force user to login
+    try{
+      let user = await auth.signInWithEmailAndPassword('test@user.com','password');
+
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  constructor(props){
+    super(props);
+    this.login();
+  }
+
+  render(){
+    return(
+      <MainStack />
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+//export default createAppContainer(TabNavigator);
 

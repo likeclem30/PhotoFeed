@@ -6,11 +6,41 @@ class upload extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            loggedin: false
+        }
     }
+
+    componentDidMount = () =>{
+        var that = this;
+        f.auth().onAuthStateChanged(function(user){
+            if(user){
+                //logged in
+                that.setState({
+                    loggedin:true
+                });
+            }else{
+                //no logged in
+                that.setState({
+                    loggedin:false
+                });
+            }
+        });
+    }
+
     render(){
         return(
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>Upload</Text>
+                { this.state.loggedin == true ? (
+                    //are logged in 
+                    <Text> Upload</Text>
+                ):(
+                    //not logged in
+                    <View>
+                        <Text> You are not logged in</Text>
+                        <Text>Please login to upload photo</Text>
+                    </View>
+                )}
             </View>
         )
     }
