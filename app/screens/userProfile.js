@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity, FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import {f, auth, database, storage } from '../../config/config.js'
-
+import PhotoList from '../components/photoList.js'
 class profile extends React.Component{
 
     constructor(props){
@@ -78,9 +78,8 @@ class profile extends React.Component{
                             <Text>{this.state.username}</Text>
                             </View>
                         </View>
-                            <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor: 'green'}}>
-                                <Text>Loading Photos...</Text>
-                            </View>
+                        <PhotoList isUser={true} userId={this.state.userId} navigation={this.props.navigation} />
+                
                         </View>
                         )}
                 </View>

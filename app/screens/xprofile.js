@@ -2,7 +2,7 @@ import React from 'react'
 import { TouchableOpacity, FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import {f, auth, database, storage } from '../../config/config.js'
 
-import PhotoList from '../components/photoList.js'
+//import PhotoList from '../components/photoList.js'
 class profile extends React.Component{
 
     constructor(props){
@@ -61,7 +61,9 @@ class profile extends React.Component{
                                 <Text style={{textAlign:'center', color:'white'}}>Upload New +</Text>
                             </TouchableOpacity>      
                         </View>
-                            <PhotoList isUser={true} userId={this.state.userId} navigation={this.props.navigation} />
+                            <View style={{flex:1, justifyContent:'center', alignItems:'center', backgroundColor: 'green'}}>
+                                <Text>Loading Photos...</Text>
+                            </View>
                         </View>
                 ):(
                     //not logged in

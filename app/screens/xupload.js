@@ -9,7 +9,6 @@ import * as Permissions from 'expo-permissions';
 class upload extends React.Component{
 
     constructor(props){
-        
         super(props);
         this.state = {
             loggedin: false,
@@ -79,8 +78,6 @@ class upload extends React.Component{
             console.log('Ignore button tap as already uploading');
             }
     }
-
-    
     uploadImage = async (uri) => {
         //
         var that = this;
@@ -117,6 +114,9 @@ class upload extends React.Component{
                 that.processUpload(downloadURL);
             });
         });
+        /* var snapshot = ref.put(blob).on('state_changed', snapshot => {
+            console.log('Progress', snapshot.bytesTransferred, snapshot.totalBytes);
+        });*/
     }
 
     processUpload = (imageUrl) => {
@@ -236,6 +236,10 @@ class upload extends React.Component{
             </View>
         )
     }
+
+
+
 }
 
 export default upload;
+
