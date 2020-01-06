@@ -5,6 +5,8 @@ import {f, auth, database, storage } from '../../config/config.js';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 
+import UserAuth from '../components/auth.js'
+
 
 class upload extends React.Component{
 
@@ -227,11 +229,7 @@ class upload extends React.Component{
                     )}
                     </View>   
                 ):(
-                    //not logged in
-                    <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-                        <Text> You are not logged in</Text>
-                        <Text>Please login to upload photo</Text>
-                    </View>
+                    <UserAuth message={'Please login to Upload a photo'} />
                 )}
             </View>
         )

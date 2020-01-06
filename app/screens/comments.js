@@ -1,6 +1,7 @@
 import React from 'react'
 import { TouchableOpacity,TextInput, KeyboardAvoidingView, FlatList, StyleSheet, Text, View, Image } from 'react-native';
 import {f, auth, database, storage } from '../../config/config.js'
+import UserAuth from '../components/auth.js'
 
 class comment extends React.Component{
 
@@ -230,10 +231,7 @@ class comment extends React.Component{
                    </KeyboardAvoidingView>
                 ):(
                     //not logged in
-                    <View>
-                        <Text> You are not logged in</Text>
-                        <Text>Please login to post a comment</Text>
-                    </View>
+                    <UserAuth message={'Please login to post a comment'} moveScreen={true} navigation={this.props.navigation} />
                 )}
             </View>
         )
